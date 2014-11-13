@@ -27,7 +27,6 @@ class ClientTest < Minitest::Test
   def test_it_finds_activity_for_a_user
     VCR.use_cassette('user_activities') do
       activities = @client.user_activities(2)
-      assert_instance_of Array, activities
       assert_equal "youtube", activities.first.provider
     end
   end
