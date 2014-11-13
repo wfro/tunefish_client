@@ -3,7 +3,7 @@ require_relative 'test_helper'
 
 class ClientTest < Minitest::Test
   def setup
-    @client = Tunefish::Client.new('http://localhost:3000')
+    @client = Tunefish::Client.new(host: 'http://localhost:3000')
   end
 
   def test_it_exists

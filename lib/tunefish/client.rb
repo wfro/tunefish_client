@@ -7,7 +7,7 @@ module Tunefish
   class Client
     attr_reader :connection
 
-    def initialize(host, version = "v1")
+    def initialize(host: "http://tunefi.sh", version: "v1")
       @connection = Faraday.new(url: host)
       @version = version
     end
