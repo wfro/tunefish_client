@@ -27,13 +27,13 @@ module Tunefish
     def user_activities(id)
       response = connection.get("#{base_url}/users/#{id}/activities")
       data = parse_response_body(response.body)
-      data["activities"].map { |activity_data| Activity.new(activity_data) }
+      build_activity_objects(data["activities"])
     end
 
     def activities
       response = connection.get("#{base_url}/activities")
       data = parse_response_body(response.body)
-      data["activities"].map { |activity_data| Activity.new(activity_data) }
+      build_activity_objects(data["activities"])
     end
 
     private
@@ -44,6 +44,10 @@ module Tunefish
 
       def base_url
         "/api/#{@version}"
+      end
+
+      def build_activity_objects(activities)
+        activities.map { |activity_data| Activity.new(activity_data) }
       end
   end
 end
