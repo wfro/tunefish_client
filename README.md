@@ -1,4 +1,4 @@
-# Tunefish
+# Tunefish Client
 
 A client for the [Tunefish](https://github.com/tyrbo/tunefish) RESTful API.  Tunefish is a music aggregation service that lets users link accounts from services like Soundcloud and Youtube, and populates an activity feed with relevant new music.  "Activities" are either youtube videos, soundcloud tracks, or tweets with the hashtag "#tf".  The Tunefish API currently supports users and activities.  You can find:
 
