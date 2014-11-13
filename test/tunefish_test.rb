@@ -20,8 +20,15 @@ class ClientTest < Minitest::Test
   def test_it_finds_all_users
     VCR.use_cassette('users') do
       users = @client.users
-      assert_instance_of Array, users
-      assert_instance_of User, users.first
+      assert_equal "John Doe", users.first.name
+    end
+  end
+
+  def test_it_finds_activity_for_a_user
+    VCR.use_cassette('user_activities') do
+      activities = @client.user_activities(2)
+      assert_instance_of Array, activities
+      assert_equal "youtube", activities.first.provider
     end
   end
 end

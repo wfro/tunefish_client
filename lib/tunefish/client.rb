@@ -1,6 +1,7 @@
 require 'faraday'
 require 'json'
 require_relative 'user'
+require_relative 'activity'
 
 module Tunefish
   class Client
@@ -20,6 +21,12 @@ module Tunefish
       response = connection.get("/api/v1/users")
       data = JSON.parse(response.body)
       data["users"].map { |user_data| User.new(user_data) }
+    end
+
+    def user_activities(id)
+      response = connection.get("/api/v1/users/#{id}/activities")
+      data = JSON.parse(response.body)
+      data["activities"].map { |activity_data| Activity.new(activity_data) }
     end
   end
 end
