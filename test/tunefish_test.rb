@@ -16,4 +16,12 @@ class ClientTest < Minitest::Test
       assert_equal "John Doe", user.name
     end
   end
+
+  def test_it_finds_all_users
+    VCR.use_cassette('users') do
+      users = @client.users
+      assert_instance_of Array, users
+      assert_instance_of User, users.first
+    end
+  end
 end
