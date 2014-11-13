@@ -1,13 +1,13 @@
-require './lib/tunefish/client'
+require './lib/tunefish_client/client'
 require_relative 'test_helper'
 
-class ClientTest < Minitest::Test
+class TunefishClientTest < Minitest::Test
   def setup
-    @client = Tunefish::Client.new(host: 'http://localhost:3000')
+    @client = TunefishClient::Client.new(host: 'http://localhost:3000')
   end
 
   def test_it_exists
-    assert Tunefish::Client
+    assert TunefishClient::Client
   end
 
   def test_it_finds_a_user

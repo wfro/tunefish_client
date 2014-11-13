@@ -1,29 +1,28 @@
 # Tunefish
 
-TODO: Write a gem description
+A client for the [Tunefish](https://github.com/tyrbo/tunefish) RESTful API.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add it to your Gemfile:
 
-    gem 'tunefish'
+`gem 'tunefish'`
 
-And then execute:
+Bundle:
 
-    $ bundle
+`$ bundle`
 
 Or install it yourself as:
 
-    $ gem install tunefish
+`$ gem install tunefish`
 
 ## Usage
 
-TODO: Write usage instructions here
+Instantiate a new client specifying the API version like so:
 
-## Contributing
+```ruby
+require 'tunefish_client'
 
-1. Fork it ( https://github.com/[my-github-username]/tunefish/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+client = TunefishClient::Client.new(version: "v1")
+```
+

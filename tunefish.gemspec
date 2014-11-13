@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'tunefish/version'
+require 'tunefish_client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "tunefish"
-  spec.version       = Tunefish::VERSION
+  spec.name          = "tunefish_client"
+  spec.version       = TunefishClient::VERSION
   spec.authors       = ["Will Faurot"]
   spec.email         = ["wfaurot@gmail.com"]
   spec.summary       = "Client for the Tunefish RESTful API."

@@ -3,7 +3,7 @@ require 'json'
 require_relative 'user'
 require_relative 'activity'
 
-module Tunefish
+module TunefishClient
   class Client
     attr_reader :connection
 
