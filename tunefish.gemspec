@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Tunefish::VERSION
   spec.authors       = ["Will Faurot"]
   spec.email         = ["wfaurot@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = "Client for the Tunefish RESTful API."
+  spec.description   = ""
+  spec.homepage      = "http://tunefi.sh"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
