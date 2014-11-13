@@ -31,4 +31,11 @@ class ClientTest < Minitest::Test
       assert_equal "youtube", activities.first.provider
     end
   end
+
+  def test_it_finds_all_activity
+    VCR.use_cassette('activities') do
+      activities = @client.activities
+      assert_equal "youtube", activities.first.provider
+    end
+  end
 end

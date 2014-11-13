@@ -28,5 +28,11 @@ module Tunefish
       data = JSON.parse(response.body)
       data["activities"].map { |activity_data| Activity.new(activity_data) }
     end
+
+    def activities
+      response = connection.get("/api/v1/activities")
+      data = JSON.parse(response.body)
+      data["activities"].map { |activity_data| Activity.new(activity_data) }
+    end
   end
 end
