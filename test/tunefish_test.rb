@@ -37,4 +37,18 @@ class TunefishClientTest < Minitest::Test
       assert_equal "youtube", activities.first.provider
     end
   end
+
+  class UserTest < Minitest::Test
+    def test_it_exists_and_has_attributes
+      user = User.new("name" => "John Doe", "photo" => "example.com/img", "id" => "1", "activity_ids" => ["1", "2"])
+      assert_equal "John Doe", user.name
+    end
+  end
+
+  class ActivityTest < Minitest::Test
+    def test_it_exists_and_has_attributes
+      activity = Activity.new("id" => "1", "url" => "http://aurl.com", "provider" => "youtube")
+      assert_equal "youtube", activity.provider
+    end
+  end
 end
